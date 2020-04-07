@@ -17,6 +17,7 @@ function cat(PATH) {
 async function webCat(URL) {
   axios.get(URL).then(function (resp) {
     console.log(resp.data);
+    process.exit(0);
   });
 }
 
