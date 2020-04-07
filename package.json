@@ -1,7 +1,6 @@
 {
   "name": "files",
   "version": "1.0.0",
-  "description": "",
   "main": "step1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +9,15 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akassian/Node-Intro.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/akassian/Node-Intro/issues"
+  },
+  "homepage": "https://github.com/akassian/Node-Intro#readme",
+  "description": ""
 }
