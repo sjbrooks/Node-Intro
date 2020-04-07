@@ -50,3 +50,5 @@ function cat(path) {
   text = fs.readFileSync(path, 'utf8');
   return text;
 }
+
+module.exports = MarkovMachine;
