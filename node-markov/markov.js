@@ -1,3 +1,5 @@
+// How do they handle puncuation?
+
 /** Textual markov chain generator */
 
 
@@ -37,7 +39,30 @@ class MarkovMachine {
   /** return random text from chains */
 
   makeText(numWords = 100) {
-    // TODO
+    console.log("This is this.chains inside of makeText", this.chains);
+    this.text = "";
+    let chains = this.chains;
+    console.log("this is chains.keys", Array.from(chains.keys()));
+    let keys = Array.from(chains.keys());
+    let randIdx = Math.floor(Math.random()*(chains.size));
+    let firstWord = keys[randIdx];
+    this.text += (firstWord);
+    let word = firstWord;
+    console.log("This is word", word)
+    
+    for (let i = 0; i < numWords; i++) {
+      let words = chains.get(word);
+      console.log("This is the words array", words);
+      let randWordIdx = Math.floor(Math.random()*(words.length))
+      word = words[randWordIdx];
+      console.log("This is word inside for loop", word)
+      if (word) {
+        this.text += (" " + word);
+      } else {
+        return this.text;
+      }
+    }
+    return this.text;
   }
 }
 
@@ -52,3 +77,7 @@ function cat(path) {
 }
 
 module.exports = MarkovMachine;
+
+const machine = new MarkovMachine("the cat in the hat");
+let text = machine.makeText();
+console.log("Your random sentence is", text);
