@@ -8,3 +8,12 @@ describe("makeChains method", function () {
     expect(simple.chains).toEqual(expected)
   })
 })
+
+describe("makeText method", function () {
+  test("returns a sentence that ends with our last word (before null)", function () {
+    let simple = new MarkovMachine('the cat in the hat');
+    let sentence = simple.makeText();
+    let endsWithLastWord = sentence.endsWith("hat");
+    expect(endsWithLastWord).toEqual(true);
+  })
+})
